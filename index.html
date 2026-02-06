@@ -208,16 +208,30 @@
                 <!-- Cart items will be injected here -->
                 <p class="empty-cart-msg">Your cart is empty.</p>
             </div>
+            <div id="checkout-form-container" style="display: none; margin-bottom: 2rem;">
+                <h3
+                    style="color: var(--accent-yellow); margin-bottom: 1rem; text-transform: uppercase; font-size: 0.9rem;">
+                    Shipping Information</h3>
+                <div class="checkout-form">
+                    <input type="text" id="cust-name" placeholder="First Name" required>
+                    <input type="text" id="cust-surname" placeholder="Last Name" required>
+                    <input type="text" id="cust-address" placeholder="Shipping Address" required>
+                </div>
+            </div>
+
             <div class="cart-footer">
                 <div class="cart-total">
                     <span>Total:</span>
                     <span id="cart-total-price">€0.00</span>
                 </div>
-                <button class="btn-primary checkout-btn">Checkout Now</button>
+                <button class="btn-primary checkout-btn">Proceed to Shipping</button>
+                <div id="paypal-button-container" style="display: none; margin-top: 1rem;"></div>
             </div>
         </div>
     </div>
 
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AX84Q2JWLxYYhQdcl2_SmMwvEPfioj41nzkA8ZzGJGX94G_STwHcrCVWaPe93bWHSEC4_Da5IX3LAr_a&currency=EUR"></script>
     <script src="script.js"></script>
 </body>
 
