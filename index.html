@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LII3D SHOP | Premium Design</title>
+    <meta name="description" content="Exclusive 3D models and design elements.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Syne:wght@700;800&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="global-embers"></div>
+    <div id="scroll-handle" class="custom-scroll-handle">
+        <i class="fa-solid fa-chevron-up"></i>
+        <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">LII3D <span class="accent">SHOP</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact-info">Contact</a></li>
+                <li><a href="#cart" class="btn-contact">Cart <i class="fa-solid fa-cart-shopping"></i><span
+                            id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-logo">LII3D<br><span class="gradient-text">SHOP</span></h1>
+                <p id="bible-verse">"For I know the plans I have for you," declares the LORD...</p>
+                <p id="bible-ref" class="bible-ref"></p>
+                <a href="#gallery" class="btn-primary">View Products</a>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <div class="section-header">
+                <h2>PRODUCTS:</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="grid-container">
+                <!-- Example Product Cards -->
+                <article class="product-card">
+                    <div class="card-image-placeholder">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Abstract Form 01</h3>
+                        <p class="price">€45.00</p>
+                        <button class="btn-text">Buy</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="card-image-placeholder">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Cyber Elements</h3>
+                        <p class="price">€32.00</p>
+                        <button class="btn-text">Buy</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="card-image-placeholder">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Luxury Texture Pack</h3>
+                        <p class="price">€50.00</p>
+                        <button class="btn-text">Buy</button>
+                    </div>
+                </article>
+
+                <!-- New Added Items -->
+                <article class="product-card">
+                    <div class="card-image-placeholder">
+                        <i class="fa-solid fa-dragon"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Dragon Scale</h3>
+                        <p class="price">€60.00</p>
+                        <button class="btn-text">Buy</button>
+                    </div>
+                </article>
+
+
+
+
+
+
+
+
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="content-wrapper">
+                <h2>Quality in Details</h2>
+                <p>We create digital art without compromise. Each polygon is deliberate.</p>
+            </div>
+        </section>
+
+        <section id="contact-info" class="contact-section">
+            <div class="section-header">
+                <h2>Contact Information</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>SMURONS33@GMAIL.COM</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>Support</h3>
+                    <p>24/7 Response Speed</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-discord"></i></a>
+            </div>
+            <p>&copy; 2026 LII3D SHOP. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <div class="main-image-placeholder">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <div class="thumbnail-row">
+                        <div class="thumbnail active"><i class="fa-solid fa-cube"></i></div>
+                        <div class="thumbnail"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="thumbnail"><i class="fa-solid fa-gem"></i></div>
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-title">Product Title</h2>
+                    <p id="modal-price" class="modal-price">€0.00</p>
+
+                    <div class="modal-description">
+                        <h3>Description</h3>
+                        <p id="modal-desc">
+                            Exclusive 3D model, optimized for high performance.
+                            Available in .OBJ, .FBX, and .BLEND formats.
+                            Perfect for visualization and game development.
+                        </p>
+                    </div>
+
+                    <div class="quantity-selector">
+                        <span>Quantity:</span>
+                        <div class="qty-controls">
+                            <button class="qty-btn" id="qty-minus">-</button>
+                            <input type="number" id="qty-input" value="1" min="1">
+                            <button class="qty-btn" id="qty-plus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn-primary" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <span class="close-modal close-cart">&times;</span>
+            <div class="cart-header">
+                <h2>YOUR SHOPPING CART</h2>
+            </div>
+            <div id="cart-items-container" class="cart-items-list">
+                <!-- Cart items will be injected here -->
+                <p class="empty-cart-msg">Your cart is empty.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">€0.00</span>
+                </div>
+                <button class="btn-primary checkout-btn">Checkout Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
