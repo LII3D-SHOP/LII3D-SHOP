@@ -18,6 +18,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    touch-action: pan-x pan-y;
 }
 
 * {
@@ -30,6 +32,7 @@ html {
 
 body {
     background-color: var(--bg-color);
+    overflow-x: hidden;
     /* Global Fire Glow Wallpaper */
     background:
         radial-gradient(circle at 20% 30%, rgba(255, 0, 0, 0.05) 0%, transparent 40%),
