@@ -1091,3 +1091,88 @@ footer p {
     animation: targetReveal 2s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 8px;
 }
+
+/* --- Responsive Media Queries --- */
+
+/* Mobile & Tablet Fixes */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide full nav menu to prevent header overflow */
+    }
+
+    /* Keep only the Cart button visible on mobile header if possible, or simplified version */
+    .btn-contact {
+        display: flex;
+        /* Ensure cart is visible */
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .hero-logo {
+        font-size: 5rem;
+        /* Massive reduction for mobile screens */
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .gallery-section,
+    .about-section,
+    .contact-section {
+        padding: 3rem 1.5rem;
+        /* Reduce side padding so content doesn't squeeze */
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* Stack products on mobile */
+        gap: 2rem;
+    }
+
+    .contact-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .contact-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 1.5rem;
+    }
+
+    .modal-body {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Small Fix for Very Narrow Screens */
+@media (max-width: 480px) {
+    .hero-logo {
+        font-size: 4rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+}

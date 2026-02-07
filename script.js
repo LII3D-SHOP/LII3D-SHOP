@@ -211,6 +211,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         paypal.Buttons({
+            style: {
+                layout: 'vertical',
+                color: 'gold',
+                shape: 'rect',
+                label: 'paypal'
+            },
             createOrder: (data, actions) => {
                 let total = 0;
                 cart.forEach(item => total += item.price * item.quantity);
@@ -289,39 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModal();
     };
 
-    // 7. --- Custom Scroll Handle ---
-    const scrollHandle = document.getElementById('scroll-handle');
-    let isDraggingScroll = false;
-    const updateHandlePosition = () => {
-        if (isDraggingScroll) return;
-        const sH = document.documentElement.scrollHeight - window.innerHeight;
-        if (sH <= 0) return;
-        const scrollPercent = window.scrollY / sH;
-        const pos = scrollPercent * (window.innerHeight - 300) + 160;
-        scrollHandle.style.top = `${pos}px`;
-    };
 
-    let hT = false;
-    window.addEventListener('scroll', () => {
-        if (!hT) { window.requestAnimationFrame(() => { updateHandlePosition(); hT = false; }); hT = true; }
-    });
-    window.addEventListener('resize', updateHandlePosition);
-    updateHandlePosition();
-
-    scrollHandle.onmousedown = () => { isDraggingScroll = true; document.body.style.cursor = 'grabbing'; };
-    let mT = false;
-    document.onmousemove = (e) => {
-        if (!isDraggingScroll || mT) return;
-        mT = true;
-        window.requestAnimationFrame(() => {
-            let y = Math.max(160, Math.min(e.clientY, window.innerHeight - 140));
-            scrollHandle.style.top = `${y}px`;
-            const pct = (y - 160) / (window.innerHeight - 300);
-            window.scrollTo(0, pct * (document.documentElement.scrollHeight - window.innerHeight));
-            mT = false;
-        });
-    };
-    document.onmouseup = () => { isDraggingScroll = false; document.body.style.cursor = ''; };
 
     // 8. --- Bible Verse ---
     const verses = [
