@@ -61,19 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('lav4s_cart_count', cartTotalItems);
     };
 
-    // 4. --- Sign Up / User Management (with 2FA Mock) ---
+    // 4. --- Sign Up / User Management ---
     const signupModal = document.getElementById('signup-modal');
     const signupTrigger = document.getElementById('signup-trigger');
     const signupClose = document.querySelector('.close-signup');
     const signupForm = document.getElementById('signup-form');
-    const stage1 = document.getElementById('signup-stage-1');
-    const stage2 = document.getElementById('signup-stage-2');
-    const btnVerifySubmit = document.getElementById('btn-verify-submit');
-    const btnVerifyBack = document.getElementById('btn-verify-back');
-    const verifyInput = document.getElementById('verify-code');
-
-    let tempUserData = null;
-    let generatedCode = null;
 
     if (currentUser) {
         signupTrigger.innerText = currentUser.name.split(' ')[0];
@@ -87,8 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 location.reload();
             }
         } else {
-            stage1.style.display = "block";
-            stage2.style.display = "none";
             signupModal.style.display = "block";
             document.body.style.overflow = "hidden";
         }
@@ -105,47 +95,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('reg-email').value;
         const pass = document.getElementById('reg-pass').value;
 
-        // Admin Credential Check (Bypasses 2FA for Admin)
+        // Admin Credential Check
         if (email === "admin@lii3dshop.com" && pass === "Markuss337!") {
             currentUser = { name: "Admin", email: email };
             localStorage.setItem('lii3d_user', JSON.stringify(currentUser));
             alert("Sveiks, Admin! Esi ielogojies sistēmā.");
             signupTrigger.innerText = "Admin";
-            signupModal.style.display = "none";
-            document.body.style.overflow = "auto";
-            return;
-        }
-
-        // 2FA Generation (MOCK)
-        generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
-        tempUserData = { name, email };
-
-        // Simulating email send
-        console.log(`[2FA MOCK] Code for ${email}: ${generatedCode}`);
-        alert(`PĀRBAUDI EPASTU! (Simulatorā kods ir: ${generatedCode})`);
-
-        // Switch Stage
-        stage1.style.display = "none";
-        stage2.style.display = "block";
-    };
-
-    btnVerifySubmit.onclick = () => {
-        if (verifyInput.value === generatedCode) {
-            currentUser = tempUserData;
-            localStorage.setItem('lii3d_user', JSON.stringify(currentUser));
-
-            alert(`Sveiks, ${currentUser.name}! Tavs profils ir apstiprināts.`);
-            signupModal.style.display = "none";
-            document.body.style.overflow = "auto";
-            signupTrigger.innerText = currentUser.name.split(' ')[0];
         } else {
-            alert("Nepareizs kods! Mēģini vēlreiz.");
+            currentUser = { name, email };
+            localStorage.setItem('lii3d_user', JSON.stringify(currentUser));
+            alert(`Sveiks, ${name}! Tavs profils ir izveidots.`);
+            signupTrigger.innerText = name.split(' ')[0];
         }
-    };
 
-    btnVerifyBack.onclick = () => {
-        stage1.style.display = "block";
-        stage2.style.display = "none";
+        signupModal.style.display = "none";
+        document.body.style.overflow = "auto";
     };
 
     const loadCart = () => {

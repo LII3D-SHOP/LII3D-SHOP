@@ -227,36 +227,17 @@
         <div class="modal-content">
             <span class="close-modal close-signup">&times;</span>
 
-            <!-- STAGE 1: Registration -->
-            <div id="signup-stage-1">
-                <div class="cart-header">
-                    <h2>CREATE PROFILE</h2>
-                    <p style="color: #888; margin-top: 0.5rem; font-size: 0.8rem;">Register to unlock purchases and
-                        exclusive content.</p>
-                </div>
-                <form id="signup-form" class="checkout-form" style="margin-top: 2rem;">
-                    <input type="text" id="reg-name" placeholder="Full Name" required>
-                    <input type="email" id="reg-email" placeholder="Email Address" required>
-                    <input type="password" id="reg-pass" placeholder="Password" required>
-                    <button type="submit" class="btn-primary">Send Verification Code</button>
-                </form>
+            <div class="cart-header">
+                <h2>CREATE PROFILE</h2>
+                <p style="color: #888; margin-top: 0.5rem; font-size: 0.8rem;">Register to unlock purchases and
+                    exclusive content.</p>
             </div>
-
-            <!-- STAGE 2: 2FA Verification -->
-            <div id="signup-stage-2" style="display: none;">
-                <div class="cart-header">
-                    <h2>VERIFY EMAIL</h2>
-                    <p id="verify-msg" style="color: #888; margin-top: 0.5rem; font-size: 0.8rem;">Ievadi 6-zīmju kodu,
-                        ko nosūtījām uz Tavu epastu.</p>
-                </div>
-                <div class="checkout-form" style="margin-top: 2rem;">
-                    <input type="text" id="verify-code" placeholder="CODE: XXXXXX" maxlength="6"
-                        style="text-align: center; font-size: 1.5rem; letter-spacing: 5px;">
-                    <button id="btn-verify-submit" class="btn-primary">Verify & Create Account</button>
-                    <button id="btn-verify-back" class="btn-text"
-                        style="margin-top: 1rem; color: #555;">Atpakaļ</button>
-                </div>
-            </div>
+            <form id="signup-form" class="checkout-form" style="margin-top: 2rem;">
+                <input type="text" id="reg-name" placeholder="Full Name" required>
+                <input type="email" id="reg-email" placeholder="Email Address" required>
+                <input type="password" id="reg-pass" placeholder="Password" required>
+                <button type="submit" class="btn-primary">Create Account</button>
+            </form>
         </div>
     </div>
 
