@@ -165,6 +165,8 @@ body {
     }
 }
 
+
+
 /* Side Glow Borders */
 body::before,
 body::after {
@@ -236,6 +238,27 @@ body::after {
 .nav-links a:hover {
     color: var(--accent-yellow);
     text-shadow: 0 0 8px var(--accent-red), 0 0 15px var(--accent-yellow);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn-signup {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s;
+}
+
+.btn-signup:hover {
+    color: var(--accent-yellow);
 }
 
 .btn-contact {
@@ -440,12 +463,7 @@ body::after {
     text-transform: uppercase;
 }
 
-.divider {
-    width: 60px;
-    height: 2px;
-    background: var(--accent-silver);
-    margin: 0 auto;
-}
+
 
 .grid-container {
     display: grid;

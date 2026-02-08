@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>LII3D SHOP | Premium Design</title>
+    <title>LII3D</title>
     <meta name="description" content="Exclusive 3D models and design elements.">
 
     <!-- Fonts -->
@@ -26,14 +26,11 @@
     <header class="main-header">
         <nav class="navbar">
             <div class="logo">LII3D <span class="accent">SHOP</span></div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#gallery">Products</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact-info">Contact</a></li>
-            </ul>
-            <a href="#cart" class="btn-contact">Cart <i class="fa-solid fa-cart-shopping"></i><span
-                    id="cart-count">0</span></a>
+            <div class="nav-actions">
+                <a href="#" class="btn-signup" id="signup-trigger">Sign In</a>
+                <a href="#cart" class="btn-contact">Cart <i class="fa-solid fa-cart-shopping"></i><span
+                        id="cart-count">0</span></a>
+            </div>
         </nav>
     </header>
 
@@ -51,7 +48,6 @@
         <section id="gallery" class="gallery-section">
             <div class="section-header">
                 <h2>PRODUCTS:</h2>
-                <div class="divider"></div>
             </div>
 
             <div class="grid-container">
@@ -121,7 +117,6 @@
         <section id="contact-info" class="contact-section">
             <div class="section-header">
                 <h2>Contact Information</h2>
-                <div class="divider"></div>
             </div>
             <div class="contact-grid">
                 <div class="contact-item">
@@ -223,6 +218,44 @@
                 </div>
                 <button class="btn-primary checkout-btn">Proceed to Shipping</button>
                 <div id="paypal-button-container" style="display: none; margin-top: 1rem;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal close-signup">&times;</span>
+
+            <!-- STAGE 1: Registration -->
+            <div id="signup-stage-1">
+                <div class="cart-header">
+                    <h2>CREATE PROFILE</h2>
+                    <p style="color: #888; margin-top: 0.5rem; font-size: 0.8rem;">Register to unlock purchases and
+                        exclusive content.</p>
+                </div>
+                <form id="signup-form" class="checkout-form" style="margin-top: 2rem;">
+                    <input type="text" id="reg-name" placeholder="Full Name" required>
+                    <input type="email" id="reg-email" placeholder="Email Address" required>
+                    <input type="password" id="reg-pass" placeholder="Password" required>
+                    <button type="submit" class="btn-primary">Send Verification Code</button>
+                </form>
+            </div>
+
+            <!-- STAGE 2: 2FA Verification -->
+            <div id="signup-stage-2" style="display: none;">
+                <div class="cart-header">
+                    <h2>VERIFY EMAIL</h2>
+                    <p id="verify-msg" style="color: #888; margin-top: 0.5rem; font-size: 0.8rem;">Ievadi 6-zīmju kodu,
+                        ko nosūtījām uz Tavu epastu.</p>
+                </div>
+                <div class="checkout-form" style="margin-top: 2rem;">
+                    <input type="text" id="verify-code" placeholder="CODE: XXXXXX" maxlength="6"
+                        style="text-align: center; font-size: 1.5rem; letter-spacing: 5px;">
+                    <button id="btn-verify-submit" class="btn-primary">Verify & Create Account</button>
+                    <button id="btn-verify-back" class="btn-text"
+                        style="margin-top: 1rem; color: #555;">Atpakaļ</button>
+                </div>
             </div>
         </div>
     </div>
